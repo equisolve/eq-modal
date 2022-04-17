@@ -1,0 +1,32 @@
+{
+  "name": "eq-modal",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "watch": {
+    "build": {
+      "patterns": [
+        "src"
+      ],
+      "extensions": "js,scss",
+      "runOnChangeOnly": true
+    }
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "babel src -d dist && sass src/style.scss dist/style.css",
+    "watch": "npm-watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "npm-watch": "^0.11.0"
+  },
+  "dependencies": {
+    "a11y-dialog": "^7.4.0",
+    "sass": "^1.50.0"
+  }
+}
