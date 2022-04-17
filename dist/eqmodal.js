@@ -49,6 +49,15 @@ var EqModal = function () {
                     console.error("Unable to find element with ID of '#" + dialog_id + "'");
                     return;
                 }
+                if (dialog.tagName === "IMG") {
+                    var img_id = dialog.id;
+                    dialog.id = "";
+                    var wrapper = document.createElement('div');
+                    dialog.parentNode.insertBefore(wrapper, dialog);
+                    wrapper.appendChild(dialog);
+                    wrapper.id = dialog.id;
+                    dialog = wrapper;
+                }
                 var content = dialog.innerHTML;
                 dialog.setAttribute("aria-hidden", "true");
                 dialog.setAttribute("aria-labelledby", dialog_id + "-title");
@@ -58,6 +67,7 @@ var EqModal = function () {
                 var inner_content = dialog.querySelector(".dialog-inner-content");
                 inner_content.innerHTML = content;
                 var dialog_title = dialog.querySelector(".dialog-inner > h1");
+                dialog_title.id = dialog_id + "-title";
                 if (btn.dataset.title) {
                     dialog_title.textContent = btn.dataset.title;
                 } else {
