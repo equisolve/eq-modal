@@ -95,6 +95,13 @@ var EqModal = function () {
                     evt.preventDefault(); // Stop anchor tags from showing up in the URL
                     a_dialog.show();
                 });
+                // Disable/enable body scrolling on dialog open/close
+                a_dialog.on('show', () => {
+                    bodyScrollLock.disableBodyScroll(a_dialog);
+                });
+                a_dialog.on('hide', () => {
+                    bodyScrollLock.enableBodyScroll(a_dialog);
+                });
             });
         }
     }]);
