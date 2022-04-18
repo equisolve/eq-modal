@@ -1,4 +1,4 @@
-#Equisolve Modal
+# Equisolve Modal
 
 Helper class to integrate [a11y-dialog](https://a11y-dialog.netlify.app/) into Insite.
 
