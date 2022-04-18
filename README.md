@@ -10,9 +10,15 @@ Create the button, add the `eq-modal` class and specify the target element's ID.
 <button type="button" class="eq-modal" data-target="target-dialog-id" data-title="Test Dialog">
     Click to view
 </button>
+
+<!-- Target Div -->
+<div id="target-dialog">
+    <h2>Dialog Title</h2>
+    <p>Lorem Ipsum</p>
+</div>
 ```
 
-In the JS somewhere in the `onready` event, instantiate the class and it will go through the document and create the neccesary markup.
+In the JS somewhere in the page load event, instantiate the class and it will go through the document and create the neccesary markup.
 
 ```javascript
 document.addEventListener('DOMContentLoaded', function() {
@@ -32,4 +38,5 @@ var opts = {
         width: "600px", // Width is one of the default styles, but you can specify and CSS property here and it will applied to all dialogs
     }
 }
+var modals = new EqModal(opts);
 ```
