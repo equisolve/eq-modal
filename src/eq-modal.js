@@ -75,13 +75,15 @@ class EqModal {
             }
             // Instantiate a11y-dialog and attach the show event to the button
             let a_dialog = new A11yDialog(dialog);
-            btn.addEventListener('click', () => {
+            btn.addEventListener('click', (evt) => {
+                evt.preventDefault(); // Stop anchor tags from showing up in the URL
                 a_dialog.show();
             });
             btn.addEventListener('keyup', (evt) => {
                 if ((evt.code !== 32) && (evt.code !== 13)) {
                     return false;
                 }
+                evt.preventDefault(); // Stop anchor tags from showing up in the URL
                 a_dialog.show();
             });
         });
