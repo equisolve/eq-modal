@@ -1,6 +1,9 @@
 /* A11y Dialog */
-.dialog-container,
-.dialog-overlay {
+.dialog:not(.dialog-container) {
+  display: none;
+}
+
+.dialog-container {
   position: fixed;
   top: 0;
   right: 0;
@@ -17,6 +20,14 @@
 }
 .dialog-container[aria-hidden=true] {
   display: none;
+}
+.dialog-container div[data-a11y-dialog-hide] {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 101;
 }
 
 .dialog-inner {

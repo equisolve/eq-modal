@@ -1,51 +1,62 @@
 /* A11y Dialog */
-.dialog-container,
-.dialog-overlay {
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
+.dialog:not(.dialog-container) {
+    display: none;
 }
 
 .dialog-container {
-  z-index: 100;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: rgba(0, 0, 0, 0.6);
-  &[aria-hidden='true'] {
-    display: none;
-  }
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.dialog-container {
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.6);
+    &[aria-hidden='true'] {
+        display: none;
+    }
+    div[data-a11y-dialog-hide] {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 101;
+    }
 }
 
 .dialog-inner {
-  max-height: 50%;
-  max-width: 50%;
-  overflow-y: scroll;
-  background: #fff;
-  padding: 60px;
-  @media (min-width: 768px) {
-    max-width: 70%;
-    max-height: 70%;
-  }
-  @media (max-width: 768px) {
-    max-width: 90%;
-    max-height: 80%;
-  }
+    max-height: 50%;
+    max-width: 50%;
+    overflow-y: scroll;
+    background: #fff;
+    padding: 60px;
+    @media (min-width: 768px) {
+        max-width: 70%;
+        max-height: 70%;
+    }
+    @media (max-width: 768px) {
+        max-width: 90%;
+        max-height: 80%;
+    }
 }
 
 .dialog-overlay {
-  background-color: rgba(43, 46, 56, 0.9);
+    background-color: rgba(43, 46, 56, 0.9);
 }
 
 .dialog-content {
-  margin: auto;
-  z-index: 2;
-  position: relative;
-  background-color: white;
+    margin: auto;
+    z-index: 2;
+    position: relative;
+    background-color: white;
 }
 
 .sr-only {
-  display: none;
+    display: none;
 }
