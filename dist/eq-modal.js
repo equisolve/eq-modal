@@ -96,10 +96,10 @@ var EqModal = function () {
                     a_dialog.show();
                 });
                 // Disable/enable body scrolling on dialog open/close
-                a_dialog.on('show', () => {
+                a_dialog.on('show', function () {
                     bodyScrollLock.disableBodyScroll(a_dialog);
                 });
-                a_dialog.on('hide', () => {
+                a_dialog.on('hide', function () {
                     bodyScrollLock.enableBodyScroll(a_dialog);
                 });
             });
