@@ -21,6 +21,11 @@ class EqModal {
         // override defaults if provided
         for (const prop in options) {
             this.settings[prop] = options[prop];
+            if (prop === "style") {
+                for (const style_name in options.style) {
+                    this.settings.style[style_name] = options.style[style_name];
+                }
+            }
         }
         this.init();
     }

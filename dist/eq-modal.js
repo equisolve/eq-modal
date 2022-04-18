@@ -26,6 +26,11 @@ var EqModal = function () {
         // override defaults if provided
         for (var prop in options) {
             this.settings[prop] = options[prop];
+            if (prop === "style") {
+                for (var style_name in options.style) {
+                    this.settings.style[style_name] = options.style[style_name];
+                }
+            }
         }
         this.init();
     }
