@@ -7,7 +7,7 @@ Helper class to integrate [a11y-dialog](https://a11y-dialog.netlify.app/) into I
 Create the button, add the `eq-modal` class and specify the target element's ID.
 
 ```HTML
-<button type="button" class="eq-modal" data-target="target-dialog-id" data-title="Test Dialog">
+<button type="button" class="eq-modal" data-target="#target-dialog-id" data-title="Test Dialog">
     Click to view
 </button>
 
